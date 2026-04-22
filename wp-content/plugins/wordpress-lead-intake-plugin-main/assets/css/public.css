@@ -1,0 +1,102 @@
+.lim-form-wrap {
+	max-width: 640px;
+}
+
+.lim-form {
+	display: grid;
+	gap: 18px;
+}
+
+.lim-field {
+	margin: 0;
+}
+
+.lim-field label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 600;
+}
+
+.lim-required {
+	margin-left: 6px;
+	color: #646970;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.lim-field input,
+.lim-field textarea {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font: inherit;
+}
+
+.lim-field input:focus,
+.lim-field textarea:focus {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.lim-help {
+	display: block;
+	margin-top: 5px;
+	color: #646970;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.lim-actions {
+	margin: 2px 0 0;
+}
+
+.lim-actions button {
+	padding: 10px 16px;
+	border: 0;
+	border-radius: 4px;
+	background: #1d2327;
+	color: #fff;
+	cursor: pointer;
+	font: inherit;
+	font-weight: 600;
+}
+
+.lim-actions button:hover,
+.lim-actions button:focus {
+	background: #2c3338;
+}
+
+.lim-actions button:focus {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2271b1;
+	outline: 2px solid transparent;
+}
+
+.lim-notice {
+	margin-bottom: 18px;
+	padding: 12px 14px;
+	border-left: 4px solid #646970;
+	background: #f6f7f7;
+	color: #1d2327;
+}
+
+.lim-notice strong,
+.lim-notice span {
+	display: block;
+}
+
+.lim-notice strong {
+	margin-bottom: 3px;
+}
+
+.lim-notice-success {
+	border-left-color: #00a32a;
+	background: #edfaef;
+}
+
+.lim-notice-error {
+	border-left-color: #d63638;
+	background: #fcf0f1;
+}
