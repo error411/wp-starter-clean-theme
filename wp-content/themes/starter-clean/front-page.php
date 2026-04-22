@@ -15,6 +15,79 @@ get_header();
 	</div>
 </section>
 
+<section class="featured-services container">
+	<header class="section-header">
+		<h2><?php esc_html_e( 'Services', 'starter-clean' ); ?></h2>
+	</header>
+
+	<?php
+	$featured_services = new WP_Query(
+		array(
+			'post_type'           => 'service',
+			'posts_per_page'      => 3,
+			'ignore_sticky_posts' => true,
+		)
+	);
+	?>
+
+	<?php if ( $featured_services->have_posts() ) : ?>
+		<div class="card-grid">
+			<?php
+			while ( $featured_services->have_posts() ) :
+				$featured_services->the_post();
+
+				get_template_part( 'partials/content' );
+			endwhile;
+			?>
+		</div>
+
+		<?php wp_reset_postdata(); ?>
+	<?php else : ?>
+		<p class="section-note"><?php esc_html_e( 'Add services in the WordPress admin to feature them here.', 'starter-clean' ); ?></p>
+	<?php endif; ?>
+</section>
+
+<section class="testimonials container">
+	<header class="section-header">
+		<h2><?php esc_html_e( 'Testimonials', 'starter-clean' ); ?></h2>
+	</header>
+
+	<?php
+	$testimonials = new WP_Query(
+		array(
+			'post_type'           => 'testimonial',
+			'posts_per_page'      => 3,
+			'ignore_sticky_posts' => true,
+		)
+	);
+	?>
+
+	<?php if ( $testimonials->have_posts() ) : ?>
+		<div class="card-grid">
+			<?php
+			while ( $testimonials->have_posts() ) :
+				$testimonials->the_post();
+				?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'testimonial-card' ); ?>>
+					<div class="testimonial-card__content">
+						<?php the_excerpt(); ?>
+					</div>
+
+					<h3 class="testimonial-card__name"><?php the_title(); ?></h3>
+				</article>
+
+				<?php
+			endwhile;
+			?>
+		</div>
+
+		<?php wp_reset_postdata(); ?>
+	<?php else : ?>
+		<p class="section-note"><?php esc_html_e( 'Add testimonials in the WordPress admin to feature them here.', 'starter-clean' ); ?></p>
+	<?php endif; ?>
+</section>
+
 <section class="latest-posts container">
 	<header class="section-header">
 		<h2><?php esc_html_e( 'Latest Posts', 'starter-clean' ); ?></h2>

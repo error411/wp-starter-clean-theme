@@ -45,3 +45,47 @@ if ( ! function_exists( 'starter_clean_posted_on' ) ) {
 		);
 	}
 }
+
+if ( ! function_exists( 'starter_clean_business_contact' ) ) {
+	/**
+	 * Output business contact details saved in the Customizer.
+	 */
+	function starter_clean_business_contact() {
+		$phone   = get_theme_mod( 'starter_clean_business_phone', '' );
+		$email   = get_theme_mod( 'starter_clean_business_email', '' );
+		$street  = get_theme_mod( 'starter_clean_business_street', '' );
+		$city    = get_theme_mod( 'starter_clean_business_city', '' );
+		$region  = get_theme_mod( 'starter_clean_business_region', '' );
+		$postal  = get_theme_mod( 'starter_clean_business_postal', '' );
+		$country = get_theme_mod( 'starter_clean_business_country', '' );
+
+		if ( ! $phone && ! $email && ! $street && ! $city && ! $region && ! $postal && ! $country ) {
+			return;
+		}
+		?>
+
+		<address class="business-contact">
+			<?php if ( $phone ) : ?>
+				<a href="<?php echo esc_url( 'tel:' . preg_replace( '/[^0-9+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a>
+			<?php endif; ?>
+
+			<?php if ( $email ) : ?>
+				<a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
+			<?php endif; ?>
+
+			<?php if ( $street || $city || $region || $postal || $country ) : ?>
+				<span>
+					<?php
+					echo esc_html(
+						implode(
+							', ',
+							array_filter( array( $street, trim( $city . ' ' . $region . ' ' . $postal ), $country ) )
+						)
+					);
+					?>
+				</span>
+			<?php endif; ?>
+		</address>
+		<?php
+	}
+}

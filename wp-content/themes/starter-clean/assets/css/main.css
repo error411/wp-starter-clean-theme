@@ -191,9 +191,16 @@ input[type="submit"]:focus {
 
 .content-area,
 .latest-posts,
+.featured-services,
+.testimonials,
 .post-list {
 	display: grid;
 	gap: var(--space-lg);
+}
+
+.featured-services,
+.testimonials {
+	margin-bottom: var(--space-xl);
 }
 
 .hero {
@@ -214,6 +221,15 @@ input[type="submit"]:focus {
 	max-width: 42rem;
 	color: var(--color-muted);
 	font-size: 1.125rem;
+}
+
+.eyebrow {
+	color: var(--color-accent-strong);
+	font-size: 0.8rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	margin-bottom: var(--space-xs);
+	text-transform: uppercase;
 }
 
 .page-header,
@@ -240,6 +256,11 @@ input[type="submit"]:focus {
 	padding: var(--space-lg);
 }
 
+.card-grid {
+	display: grid;
+	gap: var(--space-lg);
+}
+
 .entry__title a {
 	color: var(--color-text);
 	text-decoration: none;
@@ -262,6 +283,32 @@ input[type="submit"]:focus {
 .entry__content > *:last-child,
 .entry__summary > *:last-child {
 	margin-bottom: 0;
+}
+
+.testimonial-card {
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	padding: var(--space-lg);
+}
+
+.testimonial-card__content {
+	color: var(--color-muted);
+	font-size: 1.05rem;
+}
+
+.testimonial-card__content > *:last-child {
+	margin-bottom: 0;
+}
+
+.testimonial-card__name {
+	font-size: 1rem;
+	margin: var(--space-md) 0 0;
+}
+
+.section-note {
+	color: var(--color-muted);
+	margin: 0;
 }
 
 .read-more {
@@ -293,6 +340,18 @@ input[type="submit"]:focus {
 	margin: 0;
 }
 
+.site-footer__inner {
+	display: grid;
+	gap: var(--space-md);
+}
+
+.business-contact {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs) var(--space-md);
+	font-style: normal;
+}
+
 @media (min-width: 48rem) {
 	.site-header__inner {
 		align-items: center;
@@ -314,7 +373,16 @@ input[type="submit"]:focus {
 		padding: var(--space-xl);
 	}
 
+	.card-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
 	.search-form {
+		grid-template-columns: 1fr auto;
+	}
+
+	.site-footer__inner {
+		align-items: center;
 		grid-template-columns: 1fr auto;
 	}
 }
