@@ -20,7 +20,7 @@ get_header();
 
 		<?php the_posts_pagination(); ?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'No posts found.', 'starter-clean' ); ?></p>
+		<?php get_template_part( 'partials/content', 'none' ); ?>
 	<?php endif; ?>
 </section>
 

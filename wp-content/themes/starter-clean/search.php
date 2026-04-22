@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive template.
+ * Search results template.
  *
  * @package StarterClean
  */
@@ -9,11 +9,16 @@ get_header();
 ?>
 
 <section class="content-area container">
-	<header class="archive-header">
-		<?php
-		the_archive_title( '<h1 class="archive-title">', '</h1>' );
-		the_archive_description( '<div class="archive-description">', '</div>' );
-		?>
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php
+			printf(
+				/* translators: %s: Search query. */
+				esc_html__( 'Search results for: %s', 'starter-clean' ),
+				'<span>' . esc_html( get_search_query() ) . '</span>'
+			);
+			?>
+		</h1>
 	</header>
 
 	<?php if ( have_posts() ) : ?>

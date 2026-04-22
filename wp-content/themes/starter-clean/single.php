@@ -18,7 +18,7 @@ get_header();
 			<header class="entry__header">
 				<h1 class="entry__title"><?php the_title(); ?></h1>
 				<p class="entry__meta">
-					<?php echo esc_html( get_the_date() ); ?>
+					<?php starter_clean_posted_on(); ?>
 				</p>
 			</header>
 

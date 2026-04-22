@@ -2,7 +2,7 @@
 /**
  * Theme header.
  *
- * @package StarterClean
+ * @package StarterCleanPro
  */
 ?>
 <!doctype html>
@@ -16,17 +16,22 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'starter-clean' ); ?></a>
+<a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'starter-clean-pro' ); ?></a>
 
 <header class="site-header">
 	<div class="site-header__inner container">
-		<?php starter_clean_site_branding(); ?>
+		<?php starter_clean_pro_site_branding(); ?>
 
-		<nav class="primary-nav" aria-label="<?php esc_attr_e( 'Primary menu', 'starter-clean' ); ?>">
+		<button class="nav-toggle" type="button" aria-controls="primary-menu" aria-expanded="false">
+			<span class="nav-toggle__label"><?php esc_html_e( 'Menu', 'starter-clean-pro' ); ?></span>
+		</button>
+
+		<nav class="primary-nav" aria-label="<?php esc_attr_e( 'Primary menu', 'starter-clean-pro' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
 					'menu_class'     => 'primary-nav__menu',
 					'container'      => false,
 					'fallback_cb'    => false,

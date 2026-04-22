@@ -1,10 +1,10 @@
 # Starter Clean
 
-A minimal classic WordPress theme for learning, portfolio work, and custom development.
+A minimal, modern classic WordPress theme for local development, experimentation, learning, and portfolio work.
 
-Starter Clean is intentionally small: no page builders, no CSS frameworks, and no extra tooling required. It gives you a clean PHP theme foundation that is easy to read, edit, and extend.
+Starter Clean is intentionally lightweight. It uses standard PHP templates, small theme includes, and plain CSS/JavaScript so the code stays readable and easy to extend.
 
-## Structure
+## File Structure
 
 ```text
 starter-clean/
@@ -13,64 +13,68 @@ starter-clean/
   functions.php
   header.php
   footer.php
+  front-page.php
+  home.php
   page.php
   single.php
   archive.php
-  front-page.php
+  search.php
+  404.php
   screenshot.png
   assets/
     css/
       main.css
+      editor.css
     js/
       main.js
+  inc/
+    setup.php
+    enqueue.php
+    template-tags.php
   partials/
     content.php
+    content-page.php
+    content-none.php
 ```
 
-## Features
+## Activate The Theme
 
-- Classic PHP theme structure
-- Mobile-first CSS
-- Primary menu location
-- Theme support for dynamic titles and featured images
-- Reusable content partial for post summaries
-- Simple front page with hero content and latest posts
-- Lightweight asset loading through `functions.php`
-
-## Local Use
-
-Place the theme in:
+Place the theme folder at:
 
 ```text
 wp-content/themes/starter-clean
 ```
 
-Then activate **Starter Clean** from the WordPress admin under **Appearance > Themes**.
+Then open WordPress admin and go to:
 
-If you are using the included Docker setup, WordPress is available at:
+```text
+Appearance > Themes > Starter Clean > Activate
+```
+
+In this Docker project, WordPress runs at:
 
 ```text
 http://localhost:8080
 ```
 
-## Development Notes
+## Where To Edit
 
-Edit styles in:
+- Theme metadata: `style.css`
+- Theme setup and supports: `inc/setup.php`
+- CSS and JavaScript loading: `inc/enqueue.php`
+- Small reusable helpers: `inc/template-tags.php`
+- Front-end styles: `assets/css/main.css`
+- Editor styles: `assets/css/editor.css`
+- Starter JavaScript: `assets/js/main.js`
+- Reusable template parts: `partials/`
 
-```text
-assets/css/main.css
-```
+## Expanding Later
 
-Edit starter JavaScript in:
+This theme is a clean base for client-ready custom work. Good next steps include:
 
-```text
-assets/js/main.js
-```
+- Add ACF field groups for editable hero content, calls to action, or page sections.
+- Register custom post types in a small plugin or a dedicated include file.
+- Add focused template parts as repeated design patterns emerge.
+- Add build tooling only when the project actually needs it.
 
-Shared post summary markup lives in:
-
-```text
-partials/content.php
-```
-
-Keep changes simple and intentional. This theme is meant to be a readable starting point, not a finished product or a framework.
+Keep the theme simple until the project asks for more.

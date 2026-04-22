@@ -2,7 +2,7 @@
 /**
  * Page template.
  *
- * @package StarterClean
+ * @package StarterCleanPro
  */
 
 get_header();
@@ -14,6 +14,7 @@ get_header();
 		the_post();
 
 		get_template_part( 'partials/content', 'page' );
+		starter_clean_pro_render_page_sections( get_the_ID() );
 	endwhile;
 	?>
 </section>

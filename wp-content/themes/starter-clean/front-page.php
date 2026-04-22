@@ -10,8 +10,8 @@ get_header();
 
 <section class="hero">
 	<div class="container">
-		<h1><?php esc_html_e( 'Build something clean.', 'starter-clean' ); ?></h1>
-		<p><?php esc_html_e( 'A lightweight WordPress starter theme for learning, portfolio work, and custom development.', 'starter-clean' ); ?></p>
+		<h1><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h1>
+		<p><?php esc_html_e( 'A lightweight WordPress starter theme for learning, experimentation, and portfolio work.', 'starter-clean' ); ?></p>
 	</div>
 </section>
 
@@ -43,7 +43,7 @@ get_header();
 
 		<?php wp_reset_postdata(); ?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'No posts published yet.', 'starter-clean' ); ?></p>
+		<?php get_template_part( 'partials/content', 'none' ); ?>
 	<?php endif; ?>
 </section>
 

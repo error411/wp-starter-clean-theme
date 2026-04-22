@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive template.
+ * Posts index template.
  *
  * @package StarterClean
  */
@@ -9,11 +9,8 @@ get_header();
 ?>
 
 <section class="content-area container">
-	<header class="archive-header">
-		<?php
-		the_archive_title( '<h1 class="archive-title">', '</h1>' );
-		the_archive_description( '<div class="archive-description">', '</div>' );
-		?>
+	<header class="page-header">
+		<h1 class="page-title"><?php esc_html_e( 'Posts', 'starter-clean' ); ?></h1>
 	</header>
 
 	<?php if ( have_posts() ) : ?>

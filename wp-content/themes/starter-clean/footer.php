@@ -11,7 +11,7 @@
 	<div class="container">
 		<p>
 			&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?>
-			<?php bloginfo( 'name' ); ?>
+			<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 		</p>
 	</div>
 </footer>
